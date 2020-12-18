@@ -1,0 +1,13 @@
+main: me.zsergio.prueba2.Main
+name: Prueba2
+version: Prueba nr.2
+author: zSergioh
+
+commands:
+  createarena:
+  
+  joinarena:
+  
+  quitarena:
+  
+  listarenas:
