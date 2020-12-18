@@ -6,6 +6,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import me.zsergio.prueba2.commands.createArenaCMD;
 import me.zsergio.prueba2.commands.joinArenaCMD;
+import me.zsergio.prueba2.commands.listArenasCMD;
 import me.zsergio.prueba2.commands.quitArenaCMD;
 import me.zsergio.prueba2.listeners.*;
 import me.zsergio.prueba2.manage.*;
@@ -34,6 +35,7 @@ public class Main extends JavaPlugin {
 		getCommand("createarena").setExecutor(new createArenaCMD());
 		getCommand("joinarena").setExecutor(new joinArenaCMD());
 		getCommand("quitarena").setExecutor(new quitArenaCMD());
+		getCommand("listarenas").setExecutor(new listArenasCMD());
 	}
 	
 	public ArenaManager getArenaManager() {

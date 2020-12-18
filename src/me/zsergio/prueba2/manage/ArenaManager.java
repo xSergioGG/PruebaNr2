@@ -43,7 +43,7 @@ public class ArenaManager {
 		return false;
 	}
 	
-	public Arena getArena(Player player) {
+	public Arena getPArena(Player player) {
 		for(Arena all : arenas.values()) {
 			if(all.getPlayers().contains(player)) {
 				return arenas.get(all.toString());

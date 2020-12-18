@@ -9,24 +9,19 @@ import me.zsergio.prueba2.Main;
 import me.zsergio.prueba2.manage.Arena;
 import me.zsergio.prueba2.manage.ArenaManager;
 
-public class quitArenaCMD implements CommandExecutor {
+public class listArenasCMD implements CommandExecutor {
 	
 	private Main plugin = Main.getInstance();
 	private ArenaManager arenaManager = plugin.getArenaManager();
 	
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		if(sender instanceof Player) {
-			Player player = (Player) sender;
-			
-			try {
-				Arena arena = arenaManager.getPArena(player);
-				
-				arena.quitPlayer(player);
-				sender.sendMessage("§cHas salido de la arena.");
-			}catch (NullPointerException e) {
-				return true;
+		if(sender.hasPermission("pruebanr2.list")) {
+			sender.sendMessage("Lista:");
+			for(Arena all : arenaManager.getArenas().values()) {
+				sender.sendMessage("- "+all.getName());
 			}
+			
 		}
 		return true;
 	}
